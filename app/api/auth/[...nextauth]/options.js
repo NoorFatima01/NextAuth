@@ -10,6 +10,10 @@ clientSecret: process.env.GITHUB_SECRET
 
 }),
 
+//This is uses hard coded user for now.
+//Otherwise, you can use a database to store user credentials
+//and then use the database to authenticate users
+
 CredentialsProvider({
     name: 'Credentials',
     credentials:{
