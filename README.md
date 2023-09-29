@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Authentication in Next.js Project
 
-## Getting Started
+## `useSession` Hook
 
-First, run the development server:
+The `useSession()` hook is used to access session data on the client side. When the session changes, the `useSession()` hook will automatically update the session data. It returns a session object that contains the user object and other information. The session object will be `null` if the user is not authenticated.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Session Object Properties
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The session object contains the following properties:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- `user`: The user object returned by the authentication provider.
+- `expires`: The timestamp in milliseconds when the session expires.
+- `accessToken`: The access token for the authentication provider.
+- `refreshToken`: The refresh token for the authentication provider.
+- `idToken`: The ID token for the authentication provider.
+- `jwt`: The JSON Web Token (JWT) for the session.
+- `jwtPayload`: The decoded JWT payload for the session.
+- `error`: An error object if there was an error.
+- `loading`: A boolean value that is true if the session is being fetched.
+- `data`: The session object returned by the server.
+- ... and more.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## `getServerSession` Function
 
-## Learn More
+`getServerSession` is used to get the session data at the time the server is processing a request. It will return the session data as it exists at that moment, but it will not continue to monitor the session for changes.
 
-To learn more about Next.js, take a look at the following resources:
+## Tokens Explanation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Access Token
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+An access token is a credential used by an application to access an API. Its purpose is to inform the API that the bearer of this token has been authorized to access the API and perform specific actions.
 
-## Deploy on Vercel
+### Refresh Token
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+A refresh token is a special kind of token used to obtain a renewed access token without requiring the user to re-authenticate. This is useful for extending sessions.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### ID Token
+
+An ID token is a JWT that contains claims about the identity of the authenticated user, providing information such as username, email, and other profile information.
+
