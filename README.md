@@ -1,7 +1,5 @@
 # Authentication in Next.js Project
 
-This document provides an overview of the authentication functionality in the Next.js project.
-
 ## `useSession` Hook
 
 The `useSession()` hook is used to access session data on the client side. When the session changes, the `useSession()` hook will automatically update the session data. It returns a session object that contains the user object and other information. The session object will be `null` if the user is not authenticated.
