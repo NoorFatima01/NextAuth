@@ -18,21 +18,21 @@ The session object contains the following properties:
 - `error`: An error object if there was an error.
 - `loading`: A boolean value that is true if the session is being fetched.
 - `data`: The session object returned by the server.
-- status: The HTTP status code of the response.
-- headers: The HTTP headers of the response.
-- redirect: A function that redirects to a new page.
-- error: A function that throws an error.
-- onUnauthenticated: A function that is called if the user is not authenticated.
-- onSessionExpired: A function that is called if the session has expired.
-- onAccessTokenExpired: A function that is called if the access token has expired.
-- onAccessTokenError: A function that is called if there was an error getting the access token.
-- onIdTokenExpired: A function that is called if the ID token has expired.
-- onIdTokenError: A function that is called if there was an error getting the ID token.
-- onJwtExpired: A function that is called if the JWT has expired.
-- onJwtError: A function that is called if there was an error getting the JWT.
-- onSignOut: A function that is called if the user signs out.
-- onSignIn: A function that is called if the user signs in.
-- onSessionUpdate: A function that is called if the session is updated.
+- `status`: The HTTP status code of the response.
+- `headers`: The HTTP headers of the response.
+- `redirect`: A function that redirects to a new page.
+- `error`: A function that throws an error.
+- `onUnauthenticated`: A function that is called if the user is not authenticated.
+- `onSessionExpired`: A function that is called if the session has expired.
+- `onAccessTokenExpired`: A function that is called if the access token has expired.
+- `onAccessTokenError`: A function that is called if there was an error getting the access token.
+- `onIdTokenExpired`: A function that is called if the ID token has expired.
+- `onIdTokenError`: A function that is called if there was an error getting the ID token.
+- `onJwtExpired`: A function that is called if the JWT has expired.
+- `onJwtError`: A function that is called if there was an error getting the JWT.
+- `onSignOut`: A function that is called if the user signs out.
+- `onSignIn`: A function that is called if the user signs in.
+- `onSessionUpdate`: A function that is called if the session is updated.
 
 ## `getServerSession` Function
 
