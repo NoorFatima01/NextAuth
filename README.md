@@ -2,7 +2,9 @@
 
 ## `useSession` Hook
 
-The `useSession()` hook is used to access session data on the client side. When the session changes, the `useSession()` hook will automatically update the session data. It returns a session object that contains the user object and other information. The session object will be `null` if the user is not authenticated.
+The `useSession()` hook is used to access session data on the client side and helps manage session. When the session changes, the `useSession()` hook will automatically update the session data. It returns a session object that contains the user object and other information. The session object will be `null` if the user is not authenticated.  
+
+This hook cannot be used in api routes. It is strictly for client side.
 
 ### Session Object Properties
 
@@ -36,7 +38,7 @@ The session object contains the following properties:
 
 ## `getServerSession` Function
 
-`getServerSession` is used to get the session data at the time the server is processing a request. It will return the session data as it exists at that moment, but it will not continue to monitor the session for changes.
+`getServerSession` is used to get the session data at the time the server is processing a request i.e. used on server side. It will return the session data as it exists at that moment, but it will not continue to monitor the session for changes i.e. it does not manage session.
 
 ## Tokens Explanation
 
